@@ -1,0 +1,6 @@
+{
+  "name": "Chrome Web Downloader",
+  "description": "Grabs a snapshot",
+  "version": "0.0.1",
+  "manifest_version": 3
+}
