@@ -2,9 +2,10 @@
   "name": "chrome-page-downloader",
   "version": "0.0.1",
   "description": "",
-  "main": "src/background.js",
+  "main": "./src/background.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "webpack --mode development ./src/background.js --config webpack.config.js",
+    "watch": "webpack --mode development --watch ./src/background.js --config webpack.config.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/davidbstein/chrome-page-downloader/issues"
   },
-  "homepage": "https://github.com/davidbstein/chrome-page-downloader#readme"
+  "homepage": "https://github.com/davidbstein/chrome-page-downloader#readme",
+  "devDependencies": {
+    "webpack": "^5.37.0",
+    "webpack-cli": "^4.7.0"
+  }
 }
