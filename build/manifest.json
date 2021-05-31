@@ -1,6 +1,27 @@
 {
   "name": "Chrome Web Downloader",
   "description": "Grabs a snapshot",
+  "action": {
+    "default_title": "save."
+  },
   "version": "0.0.1",
-  "manifest_version": 3
+  "manifest_version": 3,
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": ["storage", "declarativeContent", "activeTab", "scripting", "fileSystem"],
+  "host_permissions": ["*://*/*"],
+  "content_scripts": [
+    {
+      "matches": ["*://*/*"],
+      "js": ["contentScript.js"],
+      "match_about_blank": true,
+      "all_frames": true
+    }
+  ],
+  "externally_connectable": {
+    "ids": ["*"],
+    "matches": ["*://*/*"],
+    "accepts_tls_channel_id": false
+  }
 }
